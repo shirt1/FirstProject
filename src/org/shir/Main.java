@@ -1,4 +1,6 @@
-package java.org.shir;
+package org.shir;
+
+import org.apache.commons.lang.StringUtils;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -6,6 +8,7 @@ import java.io.FileWriter;
 import java.util.LinkedList;
 import java.util.Locale;
 import java.util.Scanner;
+import java.util.StringJoiner;
 
 public class Main
 {
@@ -20,7 +23,6 @@ public class Main
             System.out.println("2. Shekels to Dollars");
 
             Scanner scanner = new Scanner(System.in);
-            System.out.println("");
             String input = scanner.next().trim();
             while (!input.equals("1") && !input.equals("2")) {
                 System.out.println("The input is not correct,enter 1 or 2");
@@ -45,13 +47,13 @@ public class Main
             Double result=null;
             if (input.equals("1")) {
                 result= CoinFactory.getCoininstance(Coins.USD).calculate(parsedouble);
-                System.out.println("ILS amount:" + result.toString().format("%.2f%n",result));
+                System.out.println("ILS amount:" + result.toString().format("%.2f",result));
             } else if (input.equals("2")) {
                 result= CoinFactory.getCoininstance(Coins.ILS).calculate(parsedouble);
-                System.out.println("USD amount:" + result.toString().format("%.2f%n",result));
+                System.out.println("USD amount:" + result.toString().format("%.2f",result));
             }
 
-            resultlist.add(result.toString().format("%.2f%n",result));
+            resultlist.add(result.toString().format("%.2f",result));
 
             System.out.println("You want to start over Y / N ?");
             String iWontOneMoreTime = scanner.next().trim().toUpperCase(Locale.ROOT);
@@ -66,8 +68,9 @@ public class Main
         }
 
         System.out.println("Thanks for using our currency converter");
-        String resultToSave = String.join(",", resultlist);
-        System.out.println(resultToSave);
+        String resultToSave;
+        resultToSave = StringUtils.join( resultlist,",");
+        System.out.println("All the curency converter are:" + resultToSave);
 
         try {
             File logFile=new File("./result.txt");
