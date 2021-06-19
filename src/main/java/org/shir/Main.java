@@ -1,6 +1,8 @@
 package org.shir;
 
-import org.apache.commons.lang.StringUtils;
+
+
+import org.apache.commons.lang3.StringUtils;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -8,7 +10,7 @@ import java.io.FileWriter;
 import java.util.LinkedList;
 import java.util.Locale;
 import java.util.Scanner;
-import java.util.StringJoiner;
+
 
 public class Main
 {
@@ -70,7 +72,7 @@ public class Main
         System.out.println("Thanks for using our currency converter");
         String resultToSave;
         resultToSave = StringUtils.join( resultlist,",");
-        System.out.println("All the curency converter are:" + resultToSave);
+        System.out.println("All the currency converter are:" + resultToSave);
 
         try {
             File logFile=new File("./result.txt");
