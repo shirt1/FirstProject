@@ -1,4 +1,6 @@
-package org.shir;
+package java.org.shir;
+
+
 
 public class CoinFactory
 {

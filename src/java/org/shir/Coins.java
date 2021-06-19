@@ -1,4 +1,4 @@
-package org.shir;
+package java.org.shir;
 
 public enum Coins {
     USD,

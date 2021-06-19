@@ -1,10 +1,8 @@
-package org.shir;
+package java.org.shir;
 
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
-import java.net.StandardSocketOptions;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Locale;
 import java.util.Scanner;
@@ -47,19 +45,19 @@ public class Main
             Double result=null;
             if (input.equals("1")) {
                 result= CoinFactory.getCoininstance(Coins.USD).calculate(parsedouble);
-                System.out.println(result.toString().format("%.2f%n",result));
+                System.out.println("ILS amount:" + result.toString().format("%.2f%n",result));
             } else if (input.equals("2")) {
                 result= CoinFactory.getCoininstance(Coins.ILS).calculate(parsedouble);
-                System.out.println(result.toString().format("%.2f%n",result));
+                System.out.println("USD amount:" + result.toString().format("%.2f%n",result));
             }
 
             resultlist.add(result.toString().format("%.2f%n",result));
 
-            System.out.println("YOu want to start over Y / N ?");
+            System.out.println("You want to start over Y / N ?");
             String iWontOneMoreTime = scanner.next().trim().toUpperCase(Locale.ROOT);
             while (! iWontOneMoreTime.equals("Y") && !  iWontOneMoreTime.equals("N") )
             {
-                System.out.println("Enter Y / N ?");
+                System.out.println("The input is not correct, enter Y / N:");
                 iWontOneMoreTime = scanner.next().trim().toUpperCase(Locale.ROOT);
 
             }
