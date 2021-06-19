@@ -11,7 +11,6 @@ public class ILS extends Coin implements Serializable {
         return value;
     }
 
-    @Override
     public double calculate(double arg) {
         return getValue()*arg;
     }
