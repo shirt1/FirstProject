@@ -16,6 +16,7 @@ public class CoinFactory
 
                 case USD:
                     return new USD();
+
             }
         }
 

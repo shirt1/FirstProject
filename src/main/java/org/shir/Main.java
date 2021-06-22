@@ -2,7 +2,7 @@ package org.shir;
 
 
 
-import org.apache.commons.lang3.StringUtils;
+
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -71,7 +71,7 @@ public class Main
 
         System.out.println("Thanks for using our currency converter");
         String resultToSave;
-        resultToSave = StringUtils.join( resultlist,",");
+        resultToSave = String.join( ",",resultlist);
         System.out.println("All the currency converter are:" + resultToSave);
 
         try {
